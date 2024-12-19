@@ -1,7 +1,9 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center min-h-screen"></div>
+    <div className="items-center justify-items-center min-h-screen">
+      <Hero />
+    </div>
   );
 }

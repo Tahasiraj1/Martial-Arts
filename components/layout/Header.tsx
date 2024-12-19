@@ -17,11 +17,11 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
   } from "@/components/ui/navigation-menu"
 import { motion } from "framer-motion";
+import { usePathname } from 'next/navigation'
 
-const courses = [
+const programs = [
     {
       title: "Fitness",
       description: "Enhance overall health and physical well-being.",
@@ -78,51 +78,36 @@ const courses = [
       href: "/",
     },
   ];
-
-  const classes = [
-    {
-      title: "Beginner Classes",
-      description: "Start your journey with our beginner-friendly classes.",
-      href: "/",
-    },
-    {
-      title: "Intermediate Classes",
-      description: "Take your skills to the next level with our intermediate classes.",
-      href: "/",
-    },
-    {
-      title: "Advanced Classes",
-      description: "Challenge yourself with our advanced classes.",
-      href: "/",
-    },
-  ]
   
   
 
 const Header = () => {
+    const pathName = usePathname();
+
+    const isActive = (path: string) => pathName === path;
 
   return (
-    <div className='font-poppins bg-[#0e0f0f] text-xl w-full h-20 flex items-center justify-between drop-shadow-xl text-white px-4 md:px-8 sticky top-0 z-50 opacity-90'>
+    <div className='font-poppins bg-[#0e0f0f] text-xl w-full h-20 flex items-center justify-between drop-shadow-xl text-white px-4 md:px-8 sticky top-0 z-50'>
 
         <h1 className='font-bold text-2xl animate-in slide-in-from-left-full transition-transform transform duration-1000'>
-            NAME
+            EXECUTOR
         </h1>
 
         <div className='hidden md:block font-semibold'>
             <ul className='flex'>
-                <Button
-                className="rounded-none hover:bg-red-700"
-                >
-                    <Link href="/">
-                    <motion.li className='font-semibold text-lg'
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.1 }}
-                    >HOME</motion.li>
-                    </Link>
-                </Button>
                 <NavigationMenu>
                     <NavigationMenuList>
+                        <NavigationMenuItem>
+                            <NavigationMenuLink href="/">
+                                <Button className={`rounded-none hover:bg-red-700 ${isActive('/') ? 'bg-red-700' : 'bg-primary'}`}>
+                                    <motion.li className='font-semibold text-lg'
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.1 }}
+                                    >HOME</motion.li>
+                                </Button>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger className="bg-primary hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
                                     <motion.li className='font-semibold text-lg'
@@ -133,7 +118,7 @@ const Header = () => {
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="bg-red-700 text-white">
                                 <ul className="grid w-[350px] gap-3 p-4 md:grid-cols-2">
-                                {courses.map((item) => (
+                                {programs.map((item) => (
                                     <li
                                     key={item.title}
                                     title={item.title}
@@ -146,17 +131,17 @@ const Header = () => {
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
-                        <NavigationMenuItem>
+                        {/* <NavigationMenuItem>
                             <NavigationMenuTrigger className="bg-primary hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
                                 <motion.li className='font-semibold text-lg'
                                 initial={{ opacity: 0, y: -20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
-                                >CLASSES</motion.li>
+                                >PROGRAMS</motion.li>
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="bg-red-700 text-white">
                                 <ul className="grid w-[350px] gap-3 p-4 md:grid-cols-2">
-                                    {classes.map((item) => (
+                                    {programs.map((item) => (
                                         <li
                                         key={item.title}
                                         title={item.title}
@@ -168,31 +153,42 @@ const Header = () => {
                                     ))}
                                 </ul>
                             </NavigationMenuContent>
+                        </NavigationMenuItem> */}
+                        <NavigationMenuItem>
+                          <NavigationMenuLink href="/testimonial">
+                              <Button className="rounded-none hover:bg-red-700 bg-primary">
+                                  <motion.li className='font-semibold text-lg'
+                                  initial={{ opacity: 0, y: -20 }}
+                                  whileInView={{ opacity: 1, y: 0 }}
+                                  transition={{ duration: 0.1 }}
+                                  >TESTIMONIAL</motion.li>
+                              </Button>
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuLink href="/contact">
+                                <Button className="rounded-none hover:bg-red-700 bg-primary">
+                                    <motion.li className='font-semibold text-lg'
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.1 }}
+                                    >CONTACT</motion.li>
+                                </Button>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuLink href="/about">
+                                <Button className="rounded-none hover:bg-red-700 bg-primary">
+                                    <motion.li className='font-semibold text-lg'
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.1 }}
+                                    >ABOUT</motion.li>
+                                </Button>
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-                <Button
-                className="rounded-none hover:bg-red-700"
-                >
-                    <Link href="/contact">
-                    <motion.li className='font-semibold text-lg'
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                    >CONTACT</motion.li>
-                    </Link>
-                </Button>
-                <Button
-                className="rounded-none hover:bg-red-700"
-                >
-                <Link href="/about">
-                    <motion.li className='font-semibold text-lg'
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.9 }}
-                    >ABOUT</motion.li>
-                </Link>
-                </Button>
             </ul>
         </div>
 
