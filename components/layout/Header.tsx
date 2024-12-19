@@ -87,7 +87,7 @@ const Header = () => {
     const isActive = (path: string) => pathName === path;
 
   return (
-    <div className='font-poppins bg-[#0e0f0f] text-xl w-full h-20 flex items-center justify-between drop-shadow-xl text-white px-4 md:px-8 sticky top-0 z-50'>
+    <div className='font-poppins bg-black text-xl w-full h-20 flex items-center justify-between drop-shadow-xl text-white px-4 md:px-8 sticky top-0 z-50'>
 
         <h1 className='font-bold text-2xl animate-in slide-in-from-left-full transition-transform transform duration-1000'>
             EXECUTOR
@@ -99,7 +99,7 @@ const Header = () => {
                     <NavigationMenuList>
                         <NavigationMenuItem>
                             <NavigationMenuLink href="/">
-                                <Button className={`rounded-none hover:bg-red-700 ${isActive('/') ? 'bg-red-700' : 'bg-primary'}`}>
+                                <Button className={`rounded-none hover:bg-red-700 ${isActive('/') ? 'bg-red-700' : 'bg-black'}`}>
                                     <motion.li className='font-semibold text-lg'
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ const Header = () => {
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="bg-primary hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
+                            <NavigationMenuTrigger className={`rounded-none hover:bg-red-700 h-[40px] ${isActive('/courses') ? 'bg-red-700' : 'bg-black'}`}>
                                     <motion.li className='font-semibold text-lg'
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ const Header = () => {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         {/* <NavigationMenuItem>
-                            <NavigationMenuTrigger className="bg-primary hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
+                            <NavigationMenuTrigger className="bg-black hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
                                 <motion.li className='font-semibold text-lg'
                                 initial={{ opacity: 0, y: -20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -155,8 +155,8 @@ const Header = () => {
                             </NavigationMenuContent>
                         </NavigationMenuItem> */}
                         <NavigationMenuItem>
-                          <NavigationMenuLink href="/testimonial">
-                              <Button className="rounded-none hover:bg-red-700 bg-primary">
+                          <NavigationMenuLink href="/testimonials">
+                              <Button className={`rounded-none hover:bg-red-700 ${isActive('/textimonials') ? 'bg-red-700' : 'bg-black'}`}>
                                   <motion.li className='font-semibold text-lg'
                                   initial={{ opacity: 0, y: -20 }}
                                   whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ const Header = () => {
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <NavigationMenuLink href="/contact">
-                                <Button className="rounded-none hover:bg-red-700 bg-primary">
+                                <Button className={`rounded-none hover:bg-red-700 ${isActive('/contact') ? 'bg-red-700' : 'bg-black'}`}>
                                     <motion.li className='font-semibold text-lg'
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ const Header = () => {
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <NavigationMenuLink href="/about">
-                                <Button className="rounded-none hover:bg-red-700 bg-primary">
+                                <Button className={`rounded-none hover:bg-red-700 ${isActive('/about') ? 'bg-red-700' : 'bg-black'}`}>
                                     <motion.li className='font-semibold text-lg'
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}

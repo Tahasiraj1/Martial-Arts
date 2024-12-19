@@ -4,29 +4,29 @@ import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0e0f0f] text-white">
+    <footer className="bg-black text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-center mb-12 text-red-500 opacity-20">
-            YOUR BRAND
+        <div className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-center mb-12 text-red-700">
+            THE EXECUTORS.
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-xl font-bold mt-1">Your Brand</h3>
             <p className="text-sm">Elevate your style with our curated collection of trendsetting fashion.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:text-red-300 transition-colors">
+              <Link href="#" className="hover:text-red-500 transition-colors">
                 <FaFacebook size={24} />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="hover:text-red-300 transition-colors">
+              <Link href="#" className="hover:text-red-500 transition-colors">
                 <FaTwitter size={24} />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="hover:text-red-300 transition-colors">
+              <Link href="#" className="hover:text-red-500 transition-colors">
                 <FaInstagram size={24} />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="hover:text-red-300 transition-colors">
+              <Link href="#" className="hover:text-red-500 transition-colors">
                 <FaYoutube size={24} />
                 <span className="sr-only">YouTube</span>
               </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-red-400 text-center text-sm">
+        <div className="mt-12 pt-8 border-t border-red-600 text-center text-sm">
           <p>&copy; 2024 Your Brand Name. All rights reserved.</p>
         </div>
       </div>
