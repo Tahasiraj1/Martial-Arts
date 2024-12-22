@@ -25,7 +25,7 @@ const Founder = () => {
       </div>
       <div className='flex flex-col max-w-[300px] items-center lg:items-start text-center lg:text-start justify-center pt-10 lg:pt-0 space-y-4'>
         <p className='font-mono'>
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur vitae ea impedit consequatur, enim deleniti esse in nulla iste tempora doloremque repudiandae quos temporibus modi eaque qui? Iusto, dolorem?"
+          &quot;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur vitae ea impedit consequatur, enim deleniti esse in nulla iste tempora doloremque repudiandae quos temporibus modi eaque qui? Iusto, dolorem?&quot;
         </p>
         <Image
         src='/Images/signature.png'
