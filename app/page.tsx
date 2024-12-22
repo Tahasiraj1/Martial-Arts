@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center min-h-screen">
       <Hero />
-      <WhyUs />
       <Programs />
+      <WhyUs />
       <ProgramsSection />
       <Founder />
     </div>
