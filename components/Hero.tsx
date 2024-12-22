@@ -12,7 +12,7 @@ const Hero = () => {
             </h1>
             <h2 className='text-6xl font-extrabold'>
                 MARTIAL ARTS<br />
-                SCHOOL.
+                SCHOOL<span className='text-red-600'>.</span>
             </h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, facilis? Modi blanditiis quasi magnam quas corrupti mollitia unde excepturi fugit? Doloremque veniam odit ducimus? Reiciendis ducimus dolores aspernatur deleniti hic!
