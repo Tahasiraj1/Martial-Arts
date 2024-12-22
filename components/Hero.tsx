@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
+import { Triangle } from './layout/Triangle'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col md:flex-row items-center justify-between w-full text-white md:pl-10 pt-10 md:pt-0 '>
+    <div className='relative flex flex-col md:flex-row items-center justify-between w-full md:pl-10 pt-10 md:pt-0 max-w-[2000px] '>
         <div className='flex flex-col text-start max-w-xl space-y-8 px-5'>
             <h1 className='text-2xl'>
                 Welcome To The Executor
@@ -33,6 +34,7 @@ const Hero = () => {
             height={1000}
             className='w-[1000px] h-[600px] overflow-hidden'
         />
+        <Triangle height='h-[680px]' width='w-full' backgroundColor='bg-red-700' />
     </div>
   )
 }

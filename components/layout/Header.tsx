@@ -90,7 +90,7 @@ const Header = () => {
     <div className='font-poppins bg-black text-xl w-full h-20 flex items-center justify-between drop-shadow-xl text-white px-4 md:px-8 sticky top-0 z-50'>
 
         <h1 className='font-bold text-2xl animate-in slide-in-from-left-full transition-transform transform duration-1000'>
-            EXECUTOR
+            THE EXECUTOR
         </h1>
 
         <div className='hidden md:block font-semibold'>

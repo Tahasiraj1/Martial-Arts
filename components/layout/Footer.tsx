@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-center mb-12 text-red-700">
+        <div className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-center mb-12 text-red-700">
             THE EXECUTOR.
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-red-600 text-center text-sm">
-          <p>&copy; 2024 Your Brand Name. All rights reserved.</p>
+          <p>&copy; 2024 The Executor. All rights reserved.</p>
         </div>
       </div>
     </footer>
