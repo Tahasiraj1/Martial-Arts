@@ -8,7 +8,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center min-h-screen">
+    <>
       <Hero />
       <Programs />
       <WhyUs />
@@ -16,6 +16,6 @@ export default function Home() {
       <Founder />
       <Instructors />
       <Testimonials />
-    </div>
+    </>
   );
 }
