@@ -2,11 +2,20 @@ import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
 import { SlantedHeading } from './layout/SlantedHeading';
+import { GradientBlob } from './layout/GradientBlob';
 
 
 const ProgramsSection = () => {
   return (
-    <div>
+    <div className='relative overflow-x-clip'>
+        <div className='absolute hidden lg:block right-72 -top-10 opacity-50 -z-10'>
+            <GradientBlob 
+            colors={['#f92a2a', '#7a0909', '#0e0f0f']} 
+            size={400}
+            blur={60}
+            duration={15}
+            />
+        </div>
         <SlantedHeading text='Empowering All Generations' backgroundColor='bg-red-700' textColor='text-white' width='max-w-[730px]' />
         <div className='flex flex-col lg:flex-row items-center justify-between gap-8 pt-10 pb-10 lg:pb-0'>
             <Image
@@ -16,7 +25,15 @@ const ProgramsSection = () => {
             height={1000}
             className='w-full lg:max-w-[676px] xl:max-w- h-[500px] '
             />
-            <div className='flex flex-col items-center lg:items-start justify-center space-y-6 lg:pr-20 px-10 lg:px-0'>
+            <div className='flex flex-col items-center lg:items-start justify-center space-y-6 lg:pr-20 px-10 lg:px-0 relative overflow-x-clip'>
+                <div className='absolute lg:hidden right-96 top-0 opacity-50 -z-10'>
+                    <GradientBlob 
+                    colors={['#f92a2a', '#7a0909', '#0e0f0f']} 
+                    size={300}
+                    blur={60}
+                    duration={15}
+                    />
+                </div>
                 <h2 className='text-4xl font-semibold'>
                     Adults Program
                 </h2>

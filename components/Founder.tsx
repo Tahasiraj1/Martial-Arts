@@ -8,8 +8,8 @@ import { motion } from 'framer-motion'
 
 const Founder = () => {
   return (
-    <div className='flex lg:flex-row flex-col items-center justify-center pt-10 lg:px-10 w-full relative overflow-x-hidden lg:overflow-x-visible'>
-        <div className='absolute inset-0 opacity-50'>
+    <div className='flex lg:flex-row flex-col items-center justify-center pt-10 lg:px-10 w-full relative overflow-x-clip'>
+        <div className='absolute -top-20 -left-40 opacity-50 -z-10'>
           <GradientBlob 
             colors={['#f92a2a', '#7a0909', '#0e0f0f']} 
             size={400}
