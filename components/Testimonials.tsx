@@ -13,6 +13,7 @@ import { SlantedHeading } from './layout/SlantedHeading';
 import { MdStar } from "react-icons/md";
 import DotPattern from './ui/DotPattern';
 import { motion } from "framer-motion"
+import { GradientBlob } from './ui/GradientBlob';
 
 const testimonials = [
     {
@@ -66,7 +67,7 @@ const Testimonials = () => {
       )
 
   return (
-    <motion.div className='flex flex-col w-full relative'
+    <motion.div className='flex flex-col w-full relative pt-10 overflow-x-clip'
     variants={containerVariants}
     initial="hidden"
     whileInView="visible"
@@ -74,6 +75,14 @@ const Testimonials = () => {
     >
         <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading text='testimonials' />
+        <div className='absolute right-72 -top-0 opacity-50 -z-10'>
+            <GradientBlob 
+            colors={['#f92a2a', '#7a0909', '#0e0f0f']} 
+            size={400}
+            blur={60}
+            duration={15}
+            />
+        </div>
 
       <Carousel
       className='w-full py-20 px-10'
