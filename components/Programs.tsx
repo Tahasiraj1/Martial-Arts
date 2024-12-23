@@ -1,7 +1,10 @@
+"use client"
+
 import React from 'react'
 import { IoMdArrowDropright } from "react-icons/io";
 import { SlantedHeading } from './layout/SlantedHeading';
 import { Ripple } from './layout/Ripple';
+import { motion } from "framer-motion"
 
 const programsList = [
     {
@@ -619,12 +622,16 @@ const Programs = () => {
 
             {programsList.map((item) => (
                 <Ripple key={item.id} color="white">
-                    <div key={item.id} className='overflow-hidden flex flex-col items-center justify-center w-[auto] h-[auto] px-10 py-5 bg-red-700 hover:bg-red-600 transition-all transform duration-300 rounded-md'>
+                    <motion.div key={item.id} className='flex flex-col items-center justify-center w-full h-full px-10 py-5 bg-red-700 hover:bg-red-600 rounded-md'
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10, duration: 0.2 }}
+                    
+                    >
                         {item.svg}
                         <h1 className='text-2xl font-semibold flex items-center justify-center uppercase'>
                             {item.name}  <IoMdArrowDropright />
                         </h1>
-                    </div>
+                    </motion.div>
                 </Ripple>
             ))}
 

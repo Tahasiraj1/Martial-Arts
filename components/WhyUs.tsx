@@ -12,8 +12,8 @@ const WhyUs = () => {
         paragraph='Great question! Here are a few reasons why you should train with us.'
         width='w-full'
         />
-        <div className='flex flex-col lg:flex-row gap-6 py-10 px-10'>
-            <div className='flex flex-col w-[400px] h-full rounded-md border-2 border-red-700 px-5 py-5'>
+        <div className='flex flex-col items-center justify-center lg:flex-row gap-6 py-10 px-10'>
+            <div className='flex flex-col w-[300px] md:w-[400px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'>
                 <h2 className='text-xl font-semibold text-center mb-4'>Our Training</h2>
                 <ul className='space-y-2'>
                     <li className='flex items-center gap-3'><LuCircleCheckBig className='text-red-500 w-5 h-5' />Self Defense Focused</li>
@@ -23,7 +23,7 @@ const WhyUs = () => {
                     <li className='flex items-center gap-3'><LuCircleCheckBig className='text-red-500 w-5 h-5' />No-Contract Memberships</li>
                 </ul>
             </div>
-            <div className='flex flex-col w-[400px] h-full rounded-md border-2 border-red-700 px-5 py-5'>
+            <div className='flex flex-col w-[300px] md:w-[400px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'>
                 <h2 className='text-xl font-semibold text-center mb-4'>Our Training</h2>
                 <ul className='space-y-2'>
                     <li className='flex items-center gap-3'><FaRegCircleXmark className='text-red-500 w-5 h-5' />Self Defense Focused</li>

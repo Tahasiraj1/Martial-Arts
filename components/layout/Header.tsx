@@ -154,7 +154,7 @@ const Header = () => {
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem> */}
-                        <NavigationMenuItem>
+                        {/* <NavigationMenuItem>
                           <NavigationMenuLink href="/testimonials">
                               <Button className={`rounded-none hover:bg-red-700 ${isActive('/textimonials') ? 'bg-red-700' : 'bg-black'}`}>
                                   <motion.li className='font-semibold text-lg'
@@ -164,7 +164,7 @@ const Header = () => {
                                   >TESTIMONIAL</motion.li>
                               </Button>
                           </NavigationMenuLink>
-                        </NavigationMenuItem>
+                        </NavigationMenuItem> */}
                         <NavigationMenuItem>
                             <NavigationMenuLink href="/contact">
                                 <Button className={`rounded-none hover:bg-red-700 ${isActive('/contact') ? 'bg-red-700' : 'bg-black'}`}>
