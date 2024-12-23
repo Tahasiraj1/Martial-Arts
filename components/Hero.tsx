@@ -1,11 +1,13 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
-import { Triangle } from './layout/Triangle'
+import { Triangle } from './ui/Triangle'
+import DotPattern from './ui/DotPattern'
 
 const Hero = () => {
   return (
     <div className='relative flex flex-col lg:flex-row items-center justify-between w-full md:pl-10 pt-10 lg:pt-0 max-w-[2000px] '>
+        <DotPattern className="absolute top-0 left-0 -z-10" />
         <div className='flex flex-col text-start w-full max-w-xl space-y-8 px-2'>
             <h1 className='text-2xl'>
                 Welcome To The Executor

@@ -11,6 +11,8 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { SlantedHeading } from './layout/SlantedHeading';
 import { MdStar } from "react-icons/md";
+import DotPattern from './ui/DotPattern';
+import { motion } from "framer-motion"
 
 const testimonials = [
     {
@@ -40,13 +42,37 @@ const testimonials = [
     },
 ]
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  }
+
 const Testimonials = () => {
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: true })
       )
 
   return (
-    <div className='flex flex-col w-full'>
+    <motion.div className='flex flex-col w-full relative'
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    >
+        <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading text='testimonials' />
 
       <Carousel
@@ -61,7 +87,9 @@ const Testimonials = () => {
         <CarouselContent>
             {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <div className='border-red-700 bg-black border-2 rounded-md flex flex-col text-center px-2 py-10 gap-4 h-auto w-auto'>
+                    <motion.div key={index} className='border-red-700 bg-black border-2 rounded-md flex flex-col text-center px-2 py-10 gap-4 h-auto w-auto'
+                    variants={itemVariants}
+                    >
                         <svg className='mb-4 fill-red-700' width="86" height="62" viewBox="0 0 86 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M86 12.7016L83.241 0.015625C63.3756 0.92565 49.6051 9.19097 49.6051 33.4977V61.4759H84.3105V26.3115H71.1667C71.167 18.5122 76.0605 13.925 86 12.7016Z"/>
                             <path d="M36.3949 12.7018L33.6359 0.0158691C13.7705 0.925894 0 9.19144 0 33.4982V61.4764H34.7068V26.3117H21.5548C21.5548 18.5124 26.4483 13.9252 36.3949 12.7018Z"/>
@@ -80,7 +108,7 @@ const Testimonials = () => {
                                 </span>
                             </h2>
                         </div>
-                    </div>
+                    </motion.div>
                 </CarouselItem>
             ))}
         </CarouselContent>
@@ -91,7 +119,7 @@ const Testimonials = () => {
         </div>
 
       </Carousel>
-    </div>
+    </motion.div>
   )
 }
 

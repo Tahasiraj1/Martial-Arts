@@ -2,12 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
 import { SlantedHeading } from './layout/SlantedHeading';
-import { GradientBlob } from './layout/GradientBlob';
+import { GradientBlob } from './ui/GradientBlob';
+import DotPattern from './ui/DotPattern';
 
 
 const ProgramsSection = () => {
   return (
     <div className='relative overflow-x-clip'>
+        <DotPattern className="absolute top-0 left-0 -z-10" />
         <div className='absolute hidden lg:block right-72 -top-10 opacity-50 -z-10'>
             <GradientBlob 
             colors={['#f92a2a', '#7a0909', '#0e0f0f']} 

@@ -5,6 +5,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 import { SlantedHeading } from './layout/SlantedHeading';
 import { Ripple } from './layout/Ripple';
 import { motion } from "framer-motion"
+import DotPattern from './ui/DotPattern';
 
 const programsList = [
     {
@@ -616,7 +617,8 @@ const programsList = [
 
 const Programs = () => {
   return (
-    <div className='w-full flex flex-col'>
+    <div className='w-full flex flex-col relative'>
+        <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading text='PROGRAMS WE OFFER' backgroundColor='bg-red-700' textColor='text-white' />
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center px-10 md:px-20 py-10 gap-6 text-white'>
 

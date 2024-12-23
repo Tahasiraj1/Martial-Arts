@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GradientBlob } from "./layout/GradientBlob"
+import { GradientBlob } from "./ui/GradientBlob"
 
 interface InstructorProps {
   name: string
