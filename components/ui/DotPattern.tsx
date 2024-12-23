@@ -11,7 +11,7 @@ interface DotPatternProps {
   cy?: number;
   cr?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: string | number | undefined;
 }
 export function DotPattern({
   width = 16,
