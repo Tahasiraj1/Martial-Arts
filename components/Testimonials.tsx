@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import { SlantedHeading } from './layout/SlantedHeading';
+import { MdStar } from "react-icons/md";
 
 const testimonials = [
     {
@@ -70,7 +71,13 @@ const Testimonials = () => {
                         <div className='flex flex-col items-center gap-4'>
                             <h2>
                                 <span className='font-semibold text-lg'>{testimonial.name}<br /></span>
-                                <span>{testimonial.position}</span>
+                                <span className='flex items-center gap-1 mt-1'>
+                                    <MdStar className='text-red-600' />
+                                    <MdStar className='text-red-600' />
+                                    <MdStar className='text-red-600' />
+                                    <MdStar className='text-red-600' />
+                                    <MdStar className='text-red-600' /> 
+                                </span>
                             </h2>
                         </div>
                     </div>

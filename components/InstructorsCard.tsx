@@ -44,7 +44,7 @@ export function InstructorCard({ name, image, specialties, description }: Instru
         <CardContent className="p-4 rounded-b-md border-2 border-t-0 border-red-600 bg-black ">
           <div className="flex flex-wrap gap-2 mb-4">
             {specialties.map((specialty, index) => (
-              <Badge key={index} className="rounded-full bg-red-600">
+              <Badge key={index} className="rounded-full bg-red-600 hover:bg-red-700">
                 {specialty}
               </Badge>
             ))}
