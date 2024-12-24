@@ -28,7 +28,7 @@ export const GradientBlob: React.FC<GradientBlobProps> = ({
 
   return (
     <motion.div
-      className="absolute rounded-full mix-blend-multiply filter"
+      className="absolute rounded-full mix-blend-multiply filter animate-pulse-slow"
       style={{
         background: `radial-gradient(circle, ${colors.join(", ")})`,
         width: size,
