@@ -1,16 +1,31 @@
-import React from 'react'
-import { FaEnvelope, FaPhone, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import React from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Contact() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-center text-red-600 mb-8">Contact Us</h1>
+    <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card className="bg-black border border-red-600 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-red-600">Get in Touch</CardTitle>
-            <CardDescription className='text-white'>We&apos;d love to hear from you!</CardDescription>
+            <CardTitle className="text-2xl font-semibold text-red-600">
+              Get in Touch
+            </CardTitle>
+            <CardDescription className="text-white">
+              We&apos;d love to hear from you!
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -18,21 +33,36 @@ export default function Contact() {
                 <FaEnvelope className="text-red-600 text-xl" />
                 <div>
                   <p className="font-medium">Customer Support:</p>
-                  <a href="mailto:support@yourclothingbrand.com" className="text-red-600 hover:underline">support@yourclothingbrand.com</a>
+                  <a
+                    href="mailto:support@yourclothingbrand.com"
+                    className="text-red-600 hover:underline"
+                  >
+                    support@yourclothingbrand.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-red-600 text-xl" />
                 <div>
                   <p className="font-medium">Business Inquiries:</p>
-                  <a href="mailto:business@yourclothingbrand.com" className="text-red-600 hover:underline">business@yourclothingbrand.com</a>
+                  <a
+                    href="mailto:business@yourclothingbrand.com"
+                    className="text-red-600 hover:underline"
+                  >
+                    business@yourclothingbrand.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-red-600 text-xl" />
                 <div>
                   <p className="font-medium">Phone:</p>
-                  <a href="tel:+923001234567" className="text-red-600 hover:underline">+92 300 1234567</a>
+                  <a
+                    href="tel:+923001234567"
+                    className="text-red-600 hover:underline"
+                  >
+                    +92 300 1234567
+                  </a>
                 </div>
               </div>
             </div>
@@ -41,20 +71,39 @@ export default function Contact() {
 
         <Card className="bg-black border border-red-600 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-red-600">Connect With Us</CardTitle>
-            <CardDescription className='text-white'>Follow us on social media for the latest updates and styles!</CardDescription>
+            <CardTitle className="text-2xl font-semibold text-red-600">
+              Connect With Us
+            </CardTitle>
+            <CardDescription className="text-white">
+              Follow us on social media for the latest updates and styles!
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex justify-center space-x-6">
-              <a href="https://instagram.com/yourclothingbrand" target="_blank" rel="noopener noreferrer" className="text-3xl text-pink-600 hover:text-pink-700 transition-colors">
+              <a
+                href="https://instagram.com/yourclothingbrand"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl text-pink-600 hover:text-pink-700 transition-colors"
+              >
                 <FaInstagram />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="https://facebook.com/yourclothingbrand" target="_blank" rel="noopener noreferrer" className="text-3xl text-blue-600 hover:text-blue-700 transition-colors">
+              <a
+                href="https://facebook.com/yourclothingbrand"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl text-blue-600 hover:text-blue-700 transition-colors"
+              >
                 <FaFacebook />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="https://twitter.com/yourclothingbrand" target="_blank" rel="noopener noreferrer" className="text-3xl text-sky-500 hover:text-sky-600 transition-colors">
+              <a
+                href="https://twitter.com/yourclothingbrand"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl text-sky-500 hover:text-sky-600 transition-colors"
+              >
                 <FaTwitter />
                 <span className="sr-only">Twitter</span>
               </a>
@@ -64,14 +113,14 @@ export default function Contact() {
       </div>
 
       <div className="mt-16 text-center">
-        <h2 className="text-2xl font-semibold text-red-600 mb-4">Visit Our Store</h2>
-        <p className="text-lg">
-          123 Fashion Street, Karachi, Pakistan
-        </p>
+        <h2 className="text-2xl font-semibold text-red-600 mb-4">
+          Visit Our Store
+        </h2>
+        <p className="text-lg">123 Fashion Street, Karachi, Pakistan</p>
         <p className="text-lg mt-2">
           Open Monday to Saturday, 10:00 AM - 9:00 PM
         </p>
       </div>
     </div>
-  )
+  );
 }

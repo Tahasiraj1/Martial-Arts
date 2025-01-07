@@ -2,10 +2,12 @@ import Contact from "@/components/Contact";
 import DotPattern from "@/components/ui/DotPattern";
 import React from "react";
 import { GradientBlob } from "@/components/ui/GradientBlob";
+import { SlantedHeading } from "@/components/layout/SlantedHeading";
 
 const page = () => {
   return (
-    <div className="relative overflow-x-clip">
+    <div className="relative overflow-x-clip py-10">
+      <SlantedHeading text="contact us" />
       <DotPattern className="absolute inset-0 -z-10" />
       <div className="absolute right-72 -top-0 opacity-50 -z-10">
         <GradientBlob
