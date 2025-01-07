@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  clerkId     String   @unique // Unique identifier for integration with Clerk
+  firstName   String
+  lastName    String
+  phoneNumber String
+  email       String   @unique
+  city        String
+  fullAddress String
+  postalCode  String
+  program     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([clerkId], map: "clerkId_idx") // Optional index for efficient queries
+}

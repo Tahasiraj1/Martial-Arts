@@ -32,7 +32,7 @@ const formSchema = z.object({
   phoneNumber: z.string().min(11, "Phone number is required"),
   email: z.string().email("Invalid email address"),
   city: z.string().min(3, "City is required"),
-  houseNo: z.string().min(4, "Full Address is required"),
+  fullAddress: z.string().min(4, "Full Address is required"),
   postalCode: z.string().min(2, "Postal code is required"),
   program: z.string().min(1, "Program selection is required"),
 });
@@ -52,7 +52,7 @@ const RegistrationForm = () => {
       phoneNumber: "",
       email: "",
       city: "",
-      houseNo: "",
+      fullAddress: "",
       postalCode: "",
       program: "",
     },
@@ -254,7 +254,7 @@ const RegistrationForm = () => {
             </div>
             <FormField
               control={form.control}
-              name="houseNo"
+              name="fullAddress"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel>Full Address</FormLabel>
