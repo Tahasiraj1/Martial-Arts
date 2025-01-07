@@ -15,7 +15,7 @@ const instructors = [
     name: "Sarah Johnson",
     image: "/Images/male-instructor-removebg2-preview.png",
     specialties: ["Taekwondo", "Kickboxing", "Fitness"],
-    description: "Sarah is a champion kickboxer and certified fitness trainer, focusing on high-energy workouts and practical self-defense.",
+    description: "Sarah is a champion kickboxer and certified fitness trainer, focusing on high-energy workouts and practical self-defense classes.",
   },
   {
     name: "Michael Chen",
