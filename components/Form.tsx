@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { programs } from "./layout/Header";
+import { programsList } from "./Programs";
 import {
   Select,
   SelectContent,
@@ -149,13 +149,13 @@ const RegistrationForm = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent className="rounded-none border border-red-600 bg-black">
-                      {programs.map((program) => (
+                      {programsList.map((program) => (
                         <SelectItem
                           className="text-white"
-                          key={program.title}
-                          value={program.title}
+                          key={program.id}
+                          value={program.name}
                         >
-                          {program.title}
+                          {program.name}
                         </SelectItem>
                       ))}
                     </SelectContent>

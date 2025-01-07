@@ -20,64 +20,7 @@ import {
   } from "@/components/ui/navigation-menu"
 import { motion } from "framer-motion";
 import { usePathname } from 'next/navigation'
-
-export const programs = [
-    {
-      title: "Fitness",
-      description: "Enhance overall health and physical well-being.",
-      href: "/programs",
-    },
-    {
-      title: "Karate",
-      description: "Learn self-defense techniques and discipline.",
-      href: "/programs",
-    },
-    {
-      title: "Taekwondo",
-      description: "Master kicks and strikes in this martial art.",
-      href: "/programs",
-    },
-    {
-      title: "Judo",
-      description: "Focus on throws and grappling skills.",
-      href: "/programs",
-    },
-    {
-      title: "Kung Fu",
-      description: "Practice ancient Chinese martial arts techniques.",
-      href: "/programs",
-    },
-    {
-      title: "Muay Thai",
-      description: "Specialize in striking with fists, elbows, and knees.",
-      href: "/programs",
-    },
-    {
-      title: "Kickboxing",
-      description: "Combine boxing and kicking for fitness and self-defense.",
-      href: "/programs",
-    },
-    {
-      title: "MMA",
-      description: "Learn a mix of striking and grappling techniques.",
-      href: "/programs",
-    },
-    {
-      title: "Gymnastics",
-      description: "Improve flexibility, balance, and strength.",
-      href: "/programs",
-    },
-    {
-      title: "BodyBuilding",
-      description: "Build muscle strength and body aesthetics.",
-      href: "/programs",
-    },
-    {
-      title: "Weightlifting",
-      description: "Enhance strength through heavy lifting techniques.",
-      href: "/programs",
-    },
-  ];
+import { programsList } from "../Programs";
   
   
 
@@ -118,53 +61,19 @@ const Header = () => {
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="bg-red-700 text-white">
                                 <ul className="grid w-[350px] gap-3 p-4 md:grid-cols-2">
-                                {programs.map((item) => (
+                                {programsList.map((item) => (
                                     <li
-                                    key={item.title}
-                                    title={item.title}
+                                    key={item.id}
+                                    title={item.name}
                                     >
                                         <Link href={item.href}>
-                                            {item.title}
+                                            {item.name}
                                         </Link>
                                     </li>
                                 ))}
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
-                        {/* <NavigationMenuItem>
-                            <NavigationMenuTrigger className="bg-black hover:bg-red-700 focus:text-white rounded-none h-[40px] ">
-                                <motion.li className='font-semibold text-lg'
-                                initial={{ opacity: 0, y: -20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5 }}
-                                >PROGRAMS</motion.li>
-                            </NavigationMenuTrigger>
-                            <NavigationMenuContent className="bg-red-700 text-white">
-                                <ul className="grid w-[350px] gap-3 p-4 md:grid-cols-2">
-                                    {programs.map((item) => (
-                                        <li
-                                        key={item.title}
-                                        title={item.title}
-                                        >
-                                            <Link href={item.href}>
-                                                {item.title}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem> */}
-                        {/* <NavigationMenuItem>
-                          <NavigationMenuLink href="/testimonials">
-                              <Button className={`rounded-none hover:bg-red-700 ${isActive('/textimonials') ? 'bg-red-700' : 'bg-black'}`}>
-                                  <motion.li className='font-semibold text-lg'
-                                  initial={{ opacity: 0, y: -20 }}
-                                  whileInView={{ opacity: 1, y: 0 }}
-                                  transition={{ duration: 0.1 }}
-                                  >TESTIMONIAL</motion.li>
-                              </Button>
-                          </NavigationMenuLink>
-                        </NavigationMenuItem> */}
                         <NavigationMenuItem>
                             <NavigationMenuLink href="/contact">
                                 <Button className={`rounded-none hover:bg-red-700 ${isActive('/contact') ? 'bg-red-700' : 'bg-black'}`}>
@@ -214,12 +123,7 @@ const Header = () => {
                         </li>
                         <li>
                         <Button variant="linkHover2" asChild className="w-full justify-start">
-                            <Link href="/courses">COURSES</Link>
-                        </Button>
-                        </li>
-                        <li>
-                        <Button variant="linkHover2" asChild className="w-full justify-start">
-                            <Link href="/classes">CLASSES</Link>
+                            <Link href="/programs">COURSES</Link>
                         </Button>
                         </li>
                         <li>
