@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { SlantedHeading } from './layout/SlantedHeading'
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { LuCircleCheckBig } from "react-icons/lu";
-import DotPattern from './ui/DotPattern';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,14 +33,13 @@ const WhyUs = () => {
     whileInView="visible"
     viewport={{ once: true }}
     >
-        <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading 
         text='Why train here?' 
         paragraph='Great question! Here are a few reasons why you should train with us.'
         width='w-full'
         />
-        <div className='flex flex-col items-center justify-center lg:flex-row gap-6 py-10 px-10'>
-            <motion.div className='flex flex-col w-[250px] sm+:w-[300px] md:w-[400px] lg:w-[500px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'
+        <div className='flex flex-col items-center justify-center md:flex-row gap-6 py-10 px-10'>
+            <motion.div className='flex flex-col w-[250px] sm+:w-[350px] md:w-[400px] lg:w-[500px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'
              variants={itemVariants}
             >
                 <h2 className='text-xl font-semibold text-center mb-4'>Our Training</h2>
@@ -53,7 +51,7 @@ const WhyUs = () => {
                     <li className='flex items-center gap-3'><LuCircleCheckBig className='text-red-500 w-5 h-5' />No-Contract Memberships</li>
                 </ul>
             </motion.div>
-            <motion.div variants={itemVariants} className='flex flex-col w-[250px] sm+:w-[300px] md:w-[400px] lg:w-[500px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'>
+            <motion.div variants={itemVariants} className='flex flex-col w-[250px] sm+:w-[350px] md:w-[400px] lg:w-[500px] h-full rounded-md border-2 border-red-700 bg-black px-5 py-5'>
                 <h2 className='text-xl font-semibold text-center mb-4'>Our Training</h2>
                 <ul className='space-y-2'>
                     <li className='flex items-center gap-3'><FaRegCircleXmark className='text-red-500 w-5 h-5' />Self Defense Focused</li>

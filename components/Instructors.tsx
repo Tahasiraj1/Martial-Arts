@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { InstructorCard } from "@/components/InstructorsCard"
 import { SlantedHeading } from "./layout/SlantedHeading"
-import DotPattern from "./ui/DotPattern"
 
 const instructors = [
   {
@@ -48,10 +47,9 @@ export default function Instructors() {
   return (
     <section>
       <div className="relative">
-      <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading text="our instructors" />
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10 px-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10 px-4 mt-9"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

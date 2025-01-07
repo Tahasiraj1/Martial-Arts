@@ -11,7 +11,6 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { SlantedHeading } from './layout/SlantedHeading';
 import { MdStar } from "react-icons/md";
-import DotPattern from './ui/DotPattern';
 import { motion } from "framer-motion"
 import { GradientBlob } from './ui/GradientBlob';
 
@@ -73,7 +72,6 @@ const Testimonials = () => {
     whileInView="visible"
     viewport={{ once: true }}
     >
-        <DotPattern className="absolute top-0 left-0 -z-10" />
         <SlantedHeading text='testimonials' />
         <div className='absolute right-72 -top-0 opacity-50 -z-10'>
             <GradientBlob 

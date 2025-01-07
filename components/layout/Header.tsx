@@ -21,61 +21,61 @@ import {
 import { motion } from "framer-motion";
 import { usePathname } from 'next/navigation'
 
-const programs = [
+export const programs = [
     {
       title: "Fitness",
       description: "Enhance overall health and physical well-being.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Karate",
       description: "Learn self-defense techniques and discipline.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Taekwondo",
       description: "Master kicks and strikes in this martial art.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Judo",
       description: "Focus on throws and grappling skills.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Kung Fu",
       description: "Practice ancient Chinese martial arts techniques.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Muay Thai",
       description: "Specialize in striking with fists, elbows, and knees.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Kickboxing",
       description: "Combine boxing and kicking for fitness and self-defense.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "MMA",
       description: "Learn a mix of striking and grappling techniques.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Gymnastics",
       description: "Improve flexibility, balance, and strength.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "BodyBuilding",
       description: "Build muscle strength and body aesthetics.",
-      href: "/",
+      href: "/programs",
     },
     {
       title: "Weightlifting",
       description: "Enhance strength through heavy lifting techniques.",
-      href: "/",
+      href: "/programs",
     },
   ];
   
@@ -109,7 +109,7 @@ const Header = () => {
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className={`rounded-none hover:bg-red-700 h-[40px] ${isActive('/courses') ? 'bg-red-700' : 'bg-black'}`}>
+                            <NavigationMenuTrigger className={`rounded-none hover:bg-red-700 h-[40px] ${isActive('/programs') ? 'bg-red-700' : 'bg-black'}`}>
                                     <motion.li className='font-semibold text-lg'
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}

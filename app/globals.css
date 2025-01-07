@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scrollbar width */
+ /* Adjust the scrollbar width */
+  /* For horizontal scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Scrollbar thumb */
+ /* Thumb color */
+  /* Adds padding around the thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #dc2626;
+  border: 3px solid var(--bg-color);
+}
+
+/* Scrollbar track */
+/* Track color */
+/* Match thumb style */
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color); 
+  border-radius: 10px; 
+}
+
+/* Hover effect for thumb */
+/* Add hover color for better UX */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #dc2626; 
+}
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
