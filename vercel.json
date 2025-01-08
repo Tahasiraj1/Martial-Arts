@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/student.js": {
+    "/api/student": {
       "maxDuration": 60
     }
   }
