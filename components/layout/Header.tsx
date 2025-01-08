@@ -23,8 +23,10 @@ import { usePathname } from "next/navigation";
 import { programsList } from "../Programs";
 import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import { FaUserCircle } from "react-icons/fa";
+import { useUser } from "@clerk/nextjs";
 
 const Header = () => {
+  const user = useUser();
   const pathName = usePathname();
 
   const isActive = (path: string) => pathName === path;
@@ -118,6 +120,26 @@ const Header = () => {
                   </Button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+              {user && (
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/student-portal">
+                    <Button
+                      className={`rounded-none hover:bg-red-700 ${
+                        isActive("/student-portal") ? "bg-red-700" : "bg-black"
+                      }`}
+                    >
+                      <motion.li
+                        className="font-semibold text-lg"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.1 }}
+                      >
+                        PORTAL
+                      </motion.li>
+                    </Button>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )}
             </NavigationMenuList>
           </NavigationMenu>
         </ul>
