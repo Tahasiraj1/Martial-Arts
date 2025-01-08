@@ -202,6 +202,17 @@ const Header = () => {
                     <Link href="/about">ABOUT</Link>
                   </Button>
                 </li>
+                {isSignedIn && (
+                  <li>
+                    <Button
+                      variant="linkHover2"
+                      asChild
+                      className="w-full justify-start"
+                    >
+                      <Link href="/student-portal">PORTAL</Link>
+                    </Button>
+                  </li>
+                )}
               </ul>
             </nav>
           </SheetContent>
