@@ -14,6 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import DotPattern from "@/components/ui/DotPattern";
 
 interface StudentData {
   firstName: string;
@@ -73,74 +74,77 @@ export default function StudentPortal() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {isAdmin ? (
-        <div>
-          <h2 className="text-2xl font-bold mb-4">All Students</h2>
-          {allStudents.length > 0 ? (
-            <Table className="border border-red-600">
-              <TableCaption>A list of all registered students.</TableCaption>
-              <TableHeader>
-                <TableRow className="hover:bg-primary">
-                  <TableHead>Name</TableHead>
-                  <TableHead>Email</TableHead>
-                  <TableHead>Program</TableHead>
-                  <TableHead>Phone</TableHead>
-                  <TableHead>City</TableHead>
-                  <TableHead>Address</TableHead>
-                  <TableHead>Postal Code</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {allStudents.map((student, index) => (
-                  <TableRow key={index} className="hover:bg-primary">
-                    <TableCell>{`${student.firstName} ${student.lastName}`}</TableCell>
-                    <TableCell>{student.email}</TableCell>
-                    <TableCell>{student.program}</TableCell>
-                    <TableCell>{student.phoneNumber}</TableCell>
-                    <TableCell>{student.city}</TableCell>
-                    <TableCell>{student.fullAddress}</TableCell>
-                    <TableCell>{student.postalCode}</TableCell>
+    <div className="relative">
+        <DotPattern className="absolute inset-0 -z-10" />
+      <div className="container mx-auto px-4 py-8">
+        {isAdmin ? (
+          <div>
+            <h2 className="text-2xl font-bold mb-4">All Students</h2>
+            {allStudents.length > 0 ? (
+              <Table className="border border-red-600">
+                <TableCaption>A list of all registered students.</TableCaption>
+                <TableHeader>
+                  <TableRow className="hover:bg-primary">
+                    <TableHead>Name</TableHead>
+                    <TableHead>Email</TableHead>
+                    <TableHead>Program</TableHead>
+                    <TableHead>Phone</TableHead>
+                    <TableHead>City</TableHead>
+                    <TableHead>Address</TableHead>
+                    <TableHead>Postal Code</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          ) : (
-            <p className="text-center py-4">No students found.</p>
-          )}
-        </div>
-      ) : studentData ? (
-        <div>
-          <h1 className="text-3xl font-bold mb-6">Student Portal</h1>
-          <div className="mb-4 p-4 border border-red-600 rounded-xl max-w-md md:max-w-lg space-y-2">
-            <div className="flex items-center">
-              {user?.user?.imageUrl && (
-                <Image
-                  src={user?.user?.imageUrl}
-                  alt={`${studentData.firstName}`}
-                  width={44}
-                  height={44}
-                  className="rounded-full mr-4"
-                />
-              )}
-
-              <p>
-                Welcome, {studentData.firstName} {studentData.lastName}
-              </p>
-            </div>
-            <p>Email: {studentData.email}</p>
-            <p>Program: {studentData.program}</p>
-            <p>Phone: {studentData.phoneNumber}</p>
-            <p>City: {studentData.city}</p>
-            <p>Address: {studentData.fullAddress}</p>
-            <p>Postal Code: {studentData.postalCode}</p>
+                </TableHeader>
+                <TableBody>
+                  {allStudents.map((student, index) => (
+                    <TableRow key={index} className="hover:bg-primary">
+                      <TableCell>{`${student.firstName} ${student.lastName}`}</TableCell>
+                      <TableCell>{student.email}</TableCell>
+                      <TableCell>{student.program}</TableCell>
+                      <TableCell>{student.phoneNumber}</TableCell>
+                      <TableCell>{student.city}</TableCell>
+                      <TableCell>{student.fullAddress}</TableCell>
+                      <TableCell>{student.postalCode}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            ) : (
+              <p className="text-center py-4">No students found.</p>
+            )}
           </div>
-        </div>
-      ) : (
-        <div className="h-[450px] flex items-center justify-center text-2xl text-red-600 font-bold">
-          Not Found
-        </div>
-      )}
+        ) : studentData ? (
+          <div>
+            <h1 className="text-3xl font-bold mb-6">Student Portal</h1>
+            <div className="mb-4 p-4 bg-black border border-red-600 rounded-xl max-w-md md:max-w-lg space-y-2">
+              <div className="flex items-center">
+                {user?.user?.imageUrl && (
+                  <Image
+                    src={user?.user?.imageUrl}
+                    alt={`${studentData.firstName}`}
+                    width={44}
+                    height={44}
+                    className="rounded-full mr-4"
+                  />
+                )}
+
+                <p>
+                  Welcome, {studentData.firstName} {studentData.lastName}
+                </p>
+              </div>
+              <p>Email: {studentData.email}</p>
+              <p>Program: {studentData.program}</p>
+              <p>Phone: {studentData.phoneNumber}</p>
+              <p>City: {studentData.city}</p>
+              <p>Address: {studentData.fullAddress}</p>
+              <p>Postal Code: {studentData.postalCode}</p>
+            </div>
+          </div>
+        ) : (
+          <div className="h-[450px] flex items-center justify-center text-2xl text-red-600 font-bold">
+            Not Found
+          </div>
+        )}
+      </div>
     </div>
   );
 }
