@@ -51,7 +51,7 @@ export default function StudentPortal() {
       setError(null);
 
       // First, try to fetch admin data
-      const adminResponse = await fetch("https://martial-arts-red.vercel.app/api/admin/students");
+      const adminResponse = await fetch("/api/admin/students");
       if (adminResponse.ok) {
         const data = await adminResponse.json();
         setIsAdmin(true);
@@ -63,7 +63,7 @@ export default function StudentPortal() {
 
       // If not admin, fetch student data
       if (!isAdmin) {
-        const studentResponse = await fetch("https://martial-arts-red.vercel.app/api/student");
+        const studentResponse = await fetch("/api/student");
         if (studentResponse.ok) {
           const data = await studentResponse.json();
           setStudentData(data.student);
