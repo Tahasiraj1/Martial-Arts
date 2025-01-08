@@ -807,7 +807,7 @@ const Programs = () => {
       />
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center px-10 md:px-20 py-10 gap-6 text-white">
         {programsList.map((item) => (
-          <Link href={item.href}>
+          <Link key={item.id} href={item.href}>
             <Ripple key={item.id} color="white">
               <motion.div
                 key={item.id}
