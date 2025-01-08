@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/student/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}
