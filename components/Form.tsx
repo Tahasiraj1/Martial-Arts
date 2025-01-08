@@ -88,7 +88,7 @@ const RegistrationForm = () => {
 
       toast({
         title: "Congratulations!",
-        description: "Your registration has been submitted.",
+        description: `Your registration in ${studentData.course} has been submitted.`,
         duration: 5000,
       });
 
