@@ -20,6 +20,4 @@ model Student {
   program     String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-
-  @@index([clerkId], map: "clerkId_idx") // Optional index for efficient queries
 }

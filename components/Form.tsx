@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/select";
 import { GradientBlob } from "./ui/GradientBlob";
 import Parallax from "./Parallax";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   firstName: z.string().min(3, "First name is required"),
@@ -58,16 +59,18 @@ const RegistrationForm = () => {
     },
   });
 
+  const router = useRouter();
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setErrorMessage(null);
     try {
       const studentData = {
-        customerDetails: data,
+        studentDetails: data,
         course: data.program,
       };
 
-      const response = await fetch("/api/orders", {
+      const response = await fetch("/api/student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,25 +80,28 @@ const RegistrationForm = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to place order");
+        throw new Error(errorData.error || "Failed to submit registration");
       }
 
       const result = await response.json();
-      console.log("Order placed successfully:", result);
+      console.log("Registration submitted successfully:", result);
 
       toast({
         title: "Congratulations!",
-        description: "Your form has been submitted.",
+        description: "Your registration has been submitted.",
         duration: 5000,
       });
+
+      // Redirect to the student portal after successful registration
+      router.push("/student-portal");
     } catch (error) {
-      console.error("Error placing order:", error);
+      console.error("Error submitting registration:", error);
       setErrorMessage(
         error instanceof Error ? error.message : "An unexpected error occurred"
       );
       toast({
         title: "Error",
-        description: "Failed to submit form. Please try again.",
+        description: "Failed to submit registration. Please try again.",
         variant: "destructive",
         duration: 5000,
       });
