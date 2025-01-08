@@ -71,7 +71,7 @@ const RegistrationForm = () => {
         course: data.program,
       };
 
-      const response = await fetch("/api/student", {
+      const response = await fetch("https://martial-arts-red.vercel.app/api/student", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
