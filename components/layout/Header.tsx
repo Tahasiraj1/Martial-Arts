@@ -23,10 +23,10 @@ import { usePathname } from "next/navigation";
 import { programsList } from "../Programs";
 import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import { FaUserCircle } from "react-icons/fa";
-import { useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 
 const Header = () => {
-  const user = useUser();
+  const { isSignedIn } = useAuth();
   const pathName = usePathname();
 
   const isActive = (path: string) => pathName === path;
@@ -120,7 +120,7 @@ const Header = () => {
                   </Button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              {user && (
+              {isSignedIn && (
                 <NavigationMenuItem>
                   <NavigationMenuLink href="/student-portal">
                     <Button
