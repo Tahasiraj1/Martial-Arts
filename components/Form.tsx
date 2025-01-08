@@ -101,7 +101,7 @@ const RegistrationForm = () => {
       );
       toast({
         title: "Error",
-        description: "Failed to submit registration. Please try again.",
+        description: `${error}`,
         variant: "destructive",
         duration: 5000,
       });
