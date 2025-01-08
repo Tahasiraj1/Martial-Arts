@@ -57,10 +57,14 @@ export async function GET() {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    console.log("Checking Admin");
+    
     const adminStatus = await isAdmin(userId);
 
     if (adminStatus) {
       try {
+        console.log("Fetching students for Admin");
+        
         const students = await prisma.student.findMany();
 
         if (!students || students.length === 0) {
@@ -79,6 +83,8 @@ export async function GET() {
         );
       }
     } else {
+        console.log("Fetching student details for a student");
+        
       const student = await prisma.student.findUnique({
         where: { clerkId: userId },
       });
