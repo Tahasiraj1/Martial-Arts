@@ -46,7 +46,7 @@ export default function StudentPortal() {
   const fetchStudentData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/student");
+      const response = await fetch("https://martial-arts-red.vercel.app/api/student");
       if (!response.ok) {
         throw new Error("Failed to fetch student data");
       }

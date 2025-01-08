@@ -26,6 +26,7 @@ import {
 import { GradientBlob } from "./ui/GradientBlob";
 import Parallax from "./Parallax";
 import { useRouter } from "next/navigation";
+import { PulseLoader } from "react-spinners";
 
 const formSchema = z.object({
   firstName: z.string().min(3, "First name is required"),
@@ -101,7 +102,7 @@ const RegistrationForm = () => {
       );
       toast({
         title: "Error",
-        description: `${error}`,
+        description: `${errorMessage}`,
         variant: "destructive",
         duration: 5000,
       });
@@ -276,11 +277,8 @@ const RegistrationForm = () => {
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit"}
+              {isSubmitting ? <PulseLoader color="#dc2626" /> : "Submit"}
             </Button>
-            {errorMessage && (
-              <p className="text-red-500 mt-4">{errorMessage}</p>
-            )}
           </form>
         </Form>
       </div>
