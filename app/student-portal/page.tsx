@@ -45,31 +45,20 @@ export default function StudentPortal() {
     }
   }, [isSignedIn, isLoaded, router]);
 
+
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      setError(null);
-
-      // First, try to fetch admin data
-      const adminResponse = await fetch("/api/admin/students");
-      if (adminResponse.ok) {
-        const data = await adminResponse.json();
+      const response = await fetch("/api/student");
+      if (!response.ok) {
+        throw new Error("Failed to fetch student data");
+      }
+      const data = await response.json();
+      if (data.isAdmin) {
         setIsAdmin(true);
         setAllStudents(data.students);
-      } else if (adminResponse.status !== 403) {
-        // If it's not a 403 (Forbidden) error, throw it
-        throw new Error(`Admin fetch failed with status: ${adminResponse.status}`);
-      }
-
-      // If not admin, fetch student data
-      if (!isAdmin) {
-        const studentResponse = await fetch("/api/student");
-        if (studentResponse.ok) {
-          const data = await studentResponse.json();
-          setStudentData(data.student);
-        } else {
-          throw new Error(`Student fetch failed with status: ${studentResponse.status}`);
-        }
+      } else {
+        setStudentData(data.student);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
