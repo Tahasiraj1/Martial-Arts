@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/prisma";
 import { auth, clerkClient } from "@clerk/nextjs/server";
-
-const prisma = new PrismaClient();
 
 
 async function isAdmin(userId: string) {
