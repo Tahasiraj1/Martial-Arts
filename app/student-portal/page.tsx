@@ -35,35 +35,58 @@ export default function StudentPortal() {
   const [allStudents, setAllStudents] = useState<StudentData[]>([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (isLoaded && !isSignedIn) {
       router.push("/sign-in");
     } else if (isSignedIn) {
-      fetchStudentData();
+      fetchData();
     }
   }, [isSignedIn, isLoaded, router]);
 
-  const fetchStudentData = async () => {
+  const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("https://martial-arts-red.vercel.app/api/student");
-      if (!response.ok) {
-        throw new Error("Failed to fetch student data");
-      }
-      const data = await response.json();
-      if (data.isAdmin) {
+      setError(null);
+
+      // First, try to fetch admin data
+      const adminResponse = await fetch("/api/admin/students");
+      if (adminResponse.ok) {
+        const data = await adminResponse.json();
         setIsAdmin(true);
         setAllStudents(data.students);
-      } else {
-        setStudentData(data.student);
+      } else if (adminResponse.status !== 403) {
+        // If it's not a 403 (Forbidden) error, throw it
+        throw new Error(`Admin fetch failed with status: ${adminResponse.status}`);
+      }
+
+      // If not admin, fetch student data
+      if (!isAdmin) {
+        const studentResponse = await fetch("/api/student");
+        if (studentResponse.ok) {
+          const data = await studentResponse.json();
+          setStudentData(data.student);
+        } else {
+          throw new Error(`Student fetch failed with status: ${studentResponse.status}`);
+        }
       }
     } catch (error) {
-      console.error("Error fetching student data:", error);
+      console.error("Error fetching data:", error);
+      setError("Failed to fetch data. Please try again later.");
     } finally {
       setIsLoading(false);
     }
   };
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-red-600">
+        {error}
+      </div>
+    );
+  }
+
 
   if (!isLoaded || !isSignedIn || isLoading || !user) {
     return (

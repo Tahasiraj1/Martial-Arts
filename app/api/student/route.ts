@@ -1,19 +1,8 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { auth, clerkClient } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 
 const prisma = new PrismaClient();
-
-async function isAdmin(userId: string) {
-  try {
-    const client = await clerkClient();
-    const user = await client.users.getUser(userId);
-    return user.publicMetadata.role === "admin";
-  } catch (error) {
-    console.error("Error checking admin status:", error);
-    return false;
-  }
-}
 
 export async function POST(req: Request) {
   try {
@@ -57,34 +46,6 @@ export async function GET() {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    console.log("Checking Admin");
-    
-    const adminStatus = await isAdmin(userId);
-
-    if (adminStatus) {
-      try {
-        console.log("Fetching students for Admin");
-        
-        const students = await prisma.student.findMany();
-
-        if (!students || students.length === 0) {
-          return NextResponse.json(
-            { error: "No students found" },
-            { status: 404 }
-          );
-        }
-
-        return NextResponse.json({ isAdmin: true, students });
-      } catch (error) {
-        console.error("Error fetching students", error);
-        return NextResponse.json(
-          { error: "Failed to fetch students data" },
-          { status: 500 }
-        );
-      }
-    } else {
-        console.log("Fetching student details for a student");
-        
       const student = await prisma.student.findUnique({
         where: { clerkId: userId },
       });
@@ -96,9 +57,8 @@ export async function GET() {
         );
       }
       
-      console.log("Found student");
       return NextResponse.json({ isAdmin: false, student });
-    }
+
   } catch (error) {
     console.error("Error fetching student:", error);
     return NextResponse.json(
