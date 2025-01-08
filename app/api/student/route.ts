@@ -95,7 +95,8 @@ export async function GET() {
           { status: 404 }
         );
       }
-
+      
+      console.log("Found student");
       return NextResponse.json({ isAdmin: false, student });
     }
   } catch (error) {
